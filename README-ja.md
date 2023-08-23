@@ -1,6 +1,6 @@
 # `@napolab/alpha-blend`
 
-与えられた数学的な公式に基づいて、2つの色のアルファブレンドを行うTypeScriptパッケージです。
+与えられた数学的な公式に基づいて、2 つの色のアルファブレンドを行う TypeScript パッケージです。
 
 - [English README is here](./README.md)
 
@@ -23,16 +23,16 @@ C &= \frac{\alpha_b (1 - \alpha_f) C_b + \alpha_f C_f}{\alpha} \tag{4}
 
 ### 機能
 
-- それぞれのアルファ値を持つ2つの色をブレンドします。
-- HEX形式で結果の色を取得します。
-- HEXとRGBAの入力形式の両方を処理します。
+- それぞれのアルファ値を持つ 2 つの色をブレンドします。
+- HEX 形式で結果の色を取得します。
+- HEX と RGBA の入力形式の両方を処理します。
 
 ### サンプルコード
 
 ```ts
-import { alphaBlend } from '@napolab/alpha-blend';
+import { alphaBlend } from "@napolab/alpha-blend";
 
-const blendedColor = alphaBlend('#ff5733', 'rgba(255, 87, 51, 0.5)');
+const blendedColor = alphaBlend("#ff5733", "rgba(255, 87, 51, 0.5)");
 console.log(blendedColor); // 出力: '#ff5733ff'
 ```
 
@@ -52,4 +52,4 @@ yarn add @napolab/alpha-blend
 
 ## ライセンス
 
-このプロジェクトはMITライセンスの下でライセンスされています。
+このプロジェクトは MIT ライセンスの下でライセンスされています。
