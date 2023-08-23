@@ -3,7 +3,7 @@
   "compilerOptions": {
     "lib": ["esnext"],
     "types": ["vitest/globals"],
-    "outDir": "dist",
+    "outDir": ".",
     "baseUrl": ".",
     "paths": {
       //

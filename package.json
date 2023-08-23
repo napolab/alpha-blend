@@ -1,16 +1,41 @@
 {
-  "name": "@napolab/typescript",
-  "version": "1.0.0",
+  "name": "@napolab/alpha-blend",
+  "version": "0.0.0",
   "private": false,
   "type": "module",
+  "types": "index.d.ts",
+  "main": "index.cjs",
+  "module": "index.mjs",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./index.d.ts",
+        "default": "./index.mjs"
+      },
+      "require": {
+        "types": "./index.d.ts",
+        "default": "./index.cjs"
+      }
+    }
+  },
+  "files": [
+    "index.d.ts",
+    "index.mjs",
+    "index.cjs",
+    "index.cjs.map",
+    "index.mjs.map",
+    "package.json",
+    "README.md",
+    "README-ja.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "dev": "NODE_ENV=development DEBUG=1 rollup -c rollup.config.dev.mjs -w",
     "prebuild": "rimraf dist",
     "build": "rollup -c",
-    "start": "NODE_ENV=production node dist/index.mjs",
     "lint": "npm-run-all -p lint:*",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier --check .",
@@ -32,6 +57,7 @@
     "@tsconfig/esm": "^1.0.4",
     "@tsconfig/node18": "^18.2.1",
     "@tsconfig/recommended": "^1.0.2",
+    "@types/color-rgba": "^2.1.0",
     "deepmerge": "^4.3.1",
     "esbuild": "^0.18.20",
     "eslint": "^8.47.0",

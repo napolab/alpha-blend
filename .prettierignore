@@ -6,3 +6,9 @@ dump
 node_modules
 coverage
 .ultra.cache.json
+
+index.cjs
+index.cjs.map
+index.d.ts
+index.mjs
+index.mjs.map
