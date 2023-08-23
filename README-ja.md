@@ -32,8 +32,15 @@ C &= \frac{\alpha_b (1 - \alpha_f) C_b + \alpha_f C_f}{\alpha} \tag{4}
 ```ts
 import { alphaBlend } from "@napolab/alpha-blend";
 
-const blendedColor = alphaBlend("#ff5733", "rgba(255, 87, 51, 0.5)");
-console.log(blendedColor); // 出力: '#ff5733ff'
+const foregroundColor = "#ff5733";
+const backgroundColor = "rgba(255, 87, 51, 0.5)";
+const blendedColorResult = alphaBlend(foregroundColor, backgroundColor);
+
+// 通常の返り値は '#ff5733ff'、エラーが起きたときは '#ff5733' となります。
+blendedColorResult.match({
+  (color) => color,
+  () => foregroundColor
+});
 ```
 
 ## インストール

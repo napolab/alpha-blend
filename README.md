@@ -2,7 +2,7 @@
 
 A TypeScript package to perform the alpha blending of two colors based on the given mathematical formulas.
 
-- [日本語の README はこちら](./README-ja)
+- [日本語の README はこちら](./README-ja.md)
 
 ## Formulas
 
@@ -32,8 +32,15 @@ For a detailed explanation, please refer to this [article](https://qiita.com/ker
 ```ts
 import { alphaBlend } from "@napolab/alpha-blend";
 
-const blendedColor = alphaBlend("#ff5733", "rgba(255, 87, 51, 0.5)");
-console.log(blendedColor); // Outputs: '#ff5733ff'
+const foregroundColor = "#ff5733";
+const backgroundColor = "rgba(255, 87, 51, 0.5)";
+const blendedColorResult = alphaBlend(foregroundColor, backgroundColor);
+
+// Outputs: '#ff5733ff' for normal return, and '#ff5733' in case of an error.
+blendedColorResult.match({
+  (color) => color,
+  () => foregroundColor
+});
 ```
 
 ## Installation
