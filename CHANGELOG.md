@@ -1,5 +1,11 @@
 # @napolab/alpha-blend
 
+## 1.0.2
+
+### Patch Changes
+
+- 80a829f: publish for github tag
+
 ## 1.0.1
 
 ### Patch Changes
