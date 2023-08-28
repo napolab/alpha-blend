@@ -82,5 +82,20 @@
   "volta": {
     "node": "18.17.0",
     "npm": "9.7.2"
+  },
+  "keywords": [
+    "alpha-blend",
+    "color-blending",
+    "color-utility",
+    "typescript",
+    "rgba",
+    "hex"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/napolab/alpha-blend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/napolab/alpha-blend/issues"
   }
 }
