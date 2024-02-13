@@ -3,27 +3,23 @@
   "version": "1.0.3",
   "private": false,
   "type": "module",
-  "types": "index.d.ts",
-  "main": "index.cjs",
-  "module": "index.mjs",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "exports": {
     ".": {
       "import": {
-        "types": "./index.d.ts",
-        "default": "./index.mjs"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
       },
       "require": {
-        "types": "./index.d.ts",
-        "default": "./index.cjs"
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.js"
       }
     }
   },
   "files": [
-    "index.d.ts",
-    "index.mjs",
-    "index.cjs",
-    "index.cjs.map",
-    "index.mjs.map",
+    "dist",
     "package.json",
     "README.md",
     "README-ja.md",
@@ -35,7 +31,7 @@
   },
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "rollup -c",
+    "build": "tsup src/index.ts --format esm,cjs --dts",
     "lint": "npm-run-all -p lint:*",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier --check .",
@@ -44,42 +40,38 @@
     "fmt:prettier": "prettier --write .",
     "type-check": "tsc --noEmit",
     "test": "vitest",
+    "publint": "publint",
     "release": "changeset publish"
   },
   "author": "@naporin0624",
   "license": "MIT",
   "overrides": {
-    "tsconfig-paths": "^4.0.0"
+    "tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.26.2",
-    "@naporin0624/eslint-config": "^0.12.0",
-    "@rollup/plugin-run": "^3.0.1",
-    "@tsconfig/esm": "^1.0.4",
-    "@tsconfig/node18": "^18.2.1",
-    "@tsconfig/recommended": "^1.0.2",
-    "@types/color-rgba": "^2.1.0",
+    "@changesets/cli": "^2.27.1",
+    "@naporin0624/eslint-config": "^0.14.0",
+    "@tsconfig/esm": "^1.0.5",
+    "@tsconfig/node20": "^20.1.2",
+    "@tsconfig/recommended": "^1.0.3",
+    "@types/color-rgba": "^2.1.2",
     "deepmerge": "^4.3.1",
-    "esbuild": "^0.18.20",
-    "eslint": "^8.47.0",
+    "eslint": "^8.56.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.8.8",
-    "rollup": "^3.28.1",
-    "rollup-plugin-dts": "^5.3.1",
-    "rollup-plugin-esbuild": "^5.0.0",
-    "rollup-plugin-node-externals": "^6.1.1",
-    "rollup-plugin-tsconfig-paths": "^1.5.1",
-    "typescript": "^5.1.6",
-    "vite": "^4.4.9",
-    "vite-tsconfig-paths": "^4.2.0",
+    "prettier": "^3.2.5",
+    "publint": "^0.2.7",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3",
+    "vite": "^4.5.2",
+    "vite-tsconfig-paths": "^4.3.1",
     "vitest": "^0.33.0"
   },
   "dependencies": {
     "color-rgba": "^2.4.0",
-    "rgb-hex": "^4.0.1"
+    "rgb-hex": "^4.1.0"
   },
   "volta": {
-    "node": "18.17.0",
+    "node": "20.11.0",
     "npm": "9.7.2"
   },
   "keywords": [
