@@ -1,5 +1,17 @@
 # @napolab/alpha-blend
 
+## 2.0.0
+
+### Major Changes
+
+- 81339a2: remove neverthrow
+
+### Patch Changes
+
+- 6336965: update package version & build config
+- 219604d: update doc
+- 7014792: update readme
+
 ## 1.0.3
 
 ### Patch Changes
