@@ -1,5 +1,7 @@
 # `@napolab/alpha-blend`
 
+![@napolab/alpha-blend library image](https://github.com/napolab/alpha-blend/raw/main/images/thumbnail.webp)
+
 A TypeScript package to perform the alpha blending of two colors based on the given mathematical formulas.
 
 - [日本語の README はこちら](./README-ja.md)
