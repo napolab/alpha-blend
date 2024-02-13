@@ -9,19 +9,18 @@ jobs:
     outputs:
       node-version: ${{ steps.setup-node.outputs.node-version }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Setup Node.js from package.json
         id: setup-node
         uses: actions/setup-node@v3
         with:
-          node-version-file: "package.json"
+          node-version-file: 'package.json'
 
       - name: Cache node_modules
         uses: actions/cache@v4
         with:
-          path: ~/.npm
+          path: node_modules
           key: ${{ runner.os }}-node-${{ steps.setup-node.outputs.node-version }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-${{ steps.setup-node.outputs.node-version }}-
@@ -35,8 +34,16 @@ jobs:
         with:
           node-version: ${{ needs.setup.outputs.node-version }}
 
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ needs.setup.outputs.node-version }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-${{ needs.setup.outputs.node-version }}-
+
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Type Check
         run: npm run type-check
@@ -50,8 +57,16 @@ jobs:
         with:
           node-version: ${{ needs.setup.outputs.node-version }}
 
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ needs.setup.outputs.node-version }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-${{ needs.setup.outputs.node-version }}-
+
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run tests
         run: npm run test
@@ -65,8 +80,16 @@ jobs:
         with:
           node-version: ${{ needs.setup.outputs.node-version }}
 
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ needs.setup.outputs.node-version }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-${{ needs.setup.outputs.node-version }}-
+
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Lint
         run: npm run lint
@@ -80,8 +103,16 @@ jobs:
         with:
           node-version: ${{ needs.setup.outputs.node-version }}
 
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ needs.setup.outputs.node-version }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-${{ needs.setup.outputs.node-version }}-
+
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build
         run: npm run build
