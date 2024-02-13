@@ -1,12 +1,15 @@
 import color2rgba from "color-rgba";
-import { err, ok, type Result } from "neverthrow";
 
-export const toRGBA = (color: string): Result<[r: number, g: number, b: number, a: number], string[]> => {
+export const toRGBA = (color: string): [r: number, g: number, b: number, a: number] => {
   const result = color2rgba(color);
-  if (result === undefined) return err(["Invalid color string"]);
+  if (result === undefined) {
+    throw new Error("Invalid color string");
+  }
   // 空になる場合がある
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-  if (result.length !== 4) return err(["Invalid color string"]);
+  if (result.length !== 4) {
+    throw new Error("Invalid color string");
+  }
 
-  return ok(result);
+  return result;
 };

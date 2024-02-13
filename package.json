@@ -68,7 +68,6 @@
   },
   "dependencies": {
     "color-rgba": "^2.4.0",
-    "neverthrow": "^6.1.0",
     "rgb-hex": "^4.1.0"
   },
   "volta": {
