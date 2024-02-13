@@ -18,8 +18,7 @@ describe("alphaBlend", () => {
   describe.each(testCases)("alphaBlend", ({ color1, color2, expected }) => {
     it(`should blend ${color1} and ${color2} to ${expected}`, () => {
       const result = alphaBlend(color1, color2);
-      expect(result.isOk()).toBe(true);
-      expect(result._unsafeUnwrap()).toEqual(expected);
+      expect(result).toEqual(expected);
     });
   });
 });
