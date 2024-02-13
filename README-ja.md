@@ -34,13 +34,10 @@ import { alphaBlend } from "@napolab/alpha-blend";
 
 const foregroundColor = "#ff5733";
 const backgroundColor = "rgba(255, 87, 51, 0.5)";
-const blendedColorResult = alphaBlend(foregroundColor, backgroundColor);
+const blendedColor = alphaBlend(foregroundColor, backgroundColor);
 
-// 通常の返り値は '#ff5733ff'、エラーが起きたときは '#ff5733' となります。
-blendedColorResult.match({
-  (color) => color,
-  () => foregroundColor
-});
+// 通常の返り値は '#ff5733ff'。
+blendedColor;
 ```
 
 ## インストール

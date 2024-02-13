@@ -34,13 +34,10 @@ import { alphaBlend } from "@napolab/alpha-blend";
 
 const foregroundColor = "#ff5733";
 const backgroundColor = "rgba(255, 87, 51, 0.5)";
-const blendedColorResult = alphaBlend(foregroundColor, backgroundColor);
+const blendedColor = alphaBlend(foregroundColor, backgroundColor);
 
-// Outputs: '#ff5733ff' for normal return, and '#ff5733' in case of an error.
-blendedColorResult.match({
-  (color) => color,
-  () => foregroundColor
-});
+// Outputs: '#ff5733ff'.
+blendedColor;
 ```
 
 ## Installation
