@@ -1,5 +1,7 @@
 # `@napolab/alpha-blend`
 
+![@napolab/alpha-blend library image](https://github.com/napolab/alpha-blend/raw/main/images/thumbnail.webp)
+
 与えられた数学的な公式に基づいて、2 つの色のアルファブレンドを行う TypeScript パッケージです。
 
 - [English README is here](./README.md)
