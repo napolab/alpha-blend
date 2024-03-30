@@ -1,5 +1,11 @@
 # @napolab/alpha-blend
 
+## 2.0.1
+
+### Patch Changes
+
+- a979ac9: change config add sourcemap
+
 ## 2.0.0
 
 ### Major Changes
